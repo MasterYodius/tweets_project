@@ -75,7 +75,7 @@ pipeline{
 						
 						bat 'git checkout master'
 						bat 'git merge origin/release'
-						bat 'git push origin master'
+						bat 'git push -f origin master'
 						
 						
 						
