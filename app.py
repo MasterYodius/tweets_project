@@ -44,7 +44,7 @@ def after_request(response):
 def monitor(app):
     app.before_request(before_request)
     app.after_request(after_request)
-
+"""
 target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
 
 def seek():
@@ -55,6 +55,8 @@ def seek():
             print(line.replace(target,'').strip(),line)
             return str(int(float(line.replace(target,'').strip())))
     return '0'
+"""
+
 
 @app.route('/metrics')
 def metrics():
