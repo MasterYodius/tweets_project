@@ -72,15 +72,6 @@ def metrics():
 
 
 
-
-
-
-
-
-
-
-
-
 @app.route('/')
 def index():
     print(request.remote_addr)
@@ -106,7 +97,7 @@ def RAM():
 @app.route('/LOG',methods=['GET', 'POST'])
 def LOG():
     memoire_utilisee=seek()
-    return jsonify(result="{}%".format(memoire_utilisee))
+    return jsonify(result="{}".format(memoire_utilisee))
 
 @app.route('/sentiments',methods=['GET', 'POST'])
 def sentiments():
