@@ -116,7 +116,7 @@ def sentiments():
                    color="#000",
                    )
 
-@app.route('/SIM',,methods=['GET', 'POST'])
+@app.route('/SIM',methods=['GET', 'POST'])
 def SIM():
     phrase = "wall"
     top20="".join(["<p>{}</p>".format(tweet) for tweet in get_20_best(phrase)])
