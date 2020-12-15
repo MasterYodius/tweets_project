@@ -22,7 +22,8 @@ function myFunction5() {
 $(document).ready(function()
 	{
 		setInterval("horloge()",100); // appeler toutes les 1 secondes
-		setInterval("RAM()",50); 
+		setInterval("RAM()",50);
+		setInterval("LOG()",100); 
 	}
 );
 function horloge() {
@@ -36,6 +37,13 @@ function RAM() {
 	$.getJSON($SCRIPT_ROOT+'/RAM', {
 	}, function RAM(data) {
 		$("#RAM").text(data.result);
+	});
+	return false;
+};
+function LOG() {
+	$.getJSON($SCRIPT_ROOT+'/LOG', {
+	}, function LOG(data) {
+		$("#LOG").text(data.result);
 	});
 	return false;
 };
