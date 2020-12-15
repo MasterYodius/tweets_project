@@ -45,7 +45,7 @@ def monitor(app):
     app.before_request(before_request)
     app.after_request(after_request)
 
-#target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
+target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
 
 def seek():
     for line in generate_latest().decode().split('\n'):
