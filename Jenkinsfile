@@ -30,6 +30,7 @@ pipeline{
 					if(env.BRANCH_NAME == 'features'){
 						echo 'Unit Tests'
 						//bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
+						bat 'git fetch --all'
 						bat 'git checkout develop'
 						bat 'git push origin develop'
 						
