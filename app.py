@@ -45,7 +45,7 @@ def monitor(app):
     app.before_request(before_request)
     app.after_request(after_request)
     
-"""
+
 target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
 
 def seek():
@@ -56,7 +56,7 @@ def seek():
             print(line.replace(target,'').strip(),line)
             return str(int(float(line.replace(target,'').strip())))
     return '0'
-"""
+
 
 
 @app.route('/metrics')
@@ -102,12 +102,12 @@ def RAM():
     memoire_utilisee=dict(psutil.virtual_memory()._asdict())['percent']
     return jsonify(result="{}%".format(memoire_utilisee))
 
-"""
+
 @app.route('/LOG',methods=['GET', 'POST'])
 def LOG():
     memoire_utilisee=seek()
     return jsonify(result="{}%".format(memoire_utilisee))
-"""
+
 @app.route('/sentiments',methods=['GET', 'POST'])
 def sentiments():
     phrase = request.args.get('phrase', 0, type=str)
