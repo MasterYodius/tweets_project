@@ -45,6 +45,16 @@ def monitor(app):
     app.before_request(before_request)
     app.after_request(after_request)
 
+target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
+
+def seek():
+    for line in generate_latest().decode().split('\n'):
+        print(line, target in line)
+        if target in line:
+
+            print(line.replace(target,'').strip(),line)
+            return str(int(float(line.replace(target,'').strip())))
+    return '0'
 
 @app.route('/metrics')
 def metrics():
@@ -88,8 +98,13 @@ def horloge():
 def RAM():
     memoire_utilisee=dict(psutil.virtual_memory()._asdict())['percent']
     return jsonify(result="{}%".format(memoire_utilisee))
+  
+@app.route('/LOG',methods=['GET', 'POST'])
+def LOG():
+    memoire_utilisee=seek()
+    return jsonify(result="{}%".format(memoire_utilisee))
 
-@app.route('/sentiments')
+@app.route('/sentiments',methods=['GET', 'POST'])
 def sentiments():
     phrase = request.args.get('phrase', 0, type=str)
     top20="".join(["<p>{}</p>".format(tweet) for tweet in get_20_best(phrase)])
@@ -97,7 +112,7 @@ def sentiments():
                    color="#000",
                    )
 
-@app.route('/SIM')
+@app.route('/SIM',,methods=['GET', 'POST'])
 def SIM():
     phrase = "wall"
     top20="".join(["<p>{}</p>".format(tweet) for tweet in get_20_best(phrase)])
