@@ -23,7 +23,7 @@ $(document).ready(function()
 	{
 		setInterval("horloge()",100); // appeler toutes les 1 secondes
 		setInterval("RAM()",50);
-		//setInterval("LOG()",100); 
+		setInterval("LOG()",100); 
 	}
 );
 function horloge() {
@@ -40,14 +40,14 @@ function RAM() {
 	});
 	return false;
 };
-/*
+
 function LOG() {
 	$.getJSON($SCRIPT_ROOT+'/LOG', {
 	}, function LOG(data) {
 		$("#LOG").text(data.result);
 	});
 	return false;
-};*/
+};
 $(function() {
     $('a#sentiments').bind('click', function() {
       $.getJSON($SCRIPT_ROOT + '/sentiments', {
