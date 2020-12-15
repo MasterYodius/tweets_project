@@ -49,7 +49,7 @@ def monitor(app):
 @app.route('/metrics')
 def metrics():
     """Flask endpoint to gather the metrics, will be called by Prometheus."""
-    #monitor(app)
+    monitor(app)
     #print(generate_latest().decode().split('\n').index())
     return Response(generate_latest(),
                     mimetype=CONTENT_TYPE_LATEST)
