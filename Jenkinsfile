@@ -30,6 +30,8 @@ pipeline{
 					if(env.BRANCH_NAME == 'features'){
 						echo 'Unit Tests'
 						//bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
+						bat 'git checkout develop'
+						bat 'git push origin develop'
 						
 					}
 				}	
@@ -42,7 +44,7 @@ pipeline{
 				script{
 					if(env.BRANCH_NAME == 'develop'){
 						
-						bat 'git checkout -b release'
+						bat 'git checkout release'
 						bat 'git push origin release'
 						
 						
