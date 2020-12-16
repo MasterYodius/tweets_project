@@ -34,7 +34,7 @@ pipeline{
 						//bat 'git pull'
 						//bat 'git checkout develop'
 						//bat 'git push origin develop'
-						//remotes/origin/develop
+						
 						
 					}
 				}	
