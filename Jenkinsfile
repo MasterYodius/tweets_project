@@ -43,7 +43,7 @@ pipeline{
 					if(env.BRANCH_NAME == 'develop'){
 						
 						bat 'git checkout -b release'
-						bat 'git push origin release'
+						//bat 'git push origin release'
 						
 						
 					}
