@@ -47,14 +47,11 @@ def monitor(app):
     
 
 #target = 'flask_request_count_total{endpoint="/favicon.ico",http_status="302",method="GET"}'
-target = 'python_gc_collections_total{generation="1"}'
+target = 'flask_request_count_total{endpoint="/RAM",http_status="200",method="GET"}'
 
 def seek():
     for line in generate_latest().decode().split('\n'):
-        print(line, target in line)
         if target in line:
-
-            print(line.replace(target,'').strip(),line)
             return str(int(float(line.replace(target,'').strip())))
     return '0'
 
