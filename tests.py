@@ -11,9 +11,12 @@ import time as tempo
 
 def test1():
     dictToSend = {'question':'what is the answer?'}
-    res = requests.post('http://localhost:5000/RAM', json=dictToSend)
-    print('response from server:',res.text)
-    print(res)
+    try:
+        res = requests.post('http://localhost:5000/RAM', json=dictToSend)
+        print('response from server:',res.text)
+        print(res)
+    except:
+        pass
 
 
 def test2():
@@ -25,9 +28,12 @@ def test2():
     
 def test3():
     dictToSend = {'question':'what is the answer?'}
-    res = requests.post('http://localhost:5000/sfggd', json=dictToSend)
-    print ('response from server:',res.text)
-    print(res)
+    try:
+        res = requests.post('http://localhost:5000/sfggd', json=dictToSend)
+        print ('response from server:',res.text)
+        print(res)
+    except:
+        pass
 
 """
 def test4():
@@ -44,9 +50,12 @@ def test5():
     
 def test6():
     dictToSend = {'phrase':'wall'}
-    res = requests.post('http://localhost:5000/SIM', json=dictToSend)
-    print('response from server:',res.text)
-    print(res)
+    try:
+        res = requests.post('http://localhost:5000/SIM', json=dictToSend)
+        print('response from server:',res.text)
+        print(res)
+    except:
+        pass
 
 class Test:
     def __init__(self,test):
